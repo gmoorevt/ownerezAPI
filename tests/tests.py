@@ -1,7 +1,11 @@
 import datetime
 import os 
 import dotenv
+
 from ownerrezapi import Ownerrezapi
+
+
+
 
 dotenv.load_dotenv()
 
@@ -18,6 +22,9 @@ token = os.getenv("TOKEN")
 
 
 api = Ownerrezapi(username, token)
+
+print(api.isunitbooked(357991))
+
 # bookings = api.getbookings(property_id=357991, since_utc="2024-01-01")
 # today = datetime.datetime.today()
 # for booking in bookings:
@@ -30,10 +37,10 @@ api = Ownerrezapi(username, token)
 #         print(booking.title)
 #         continue
 
-booking = api.getbooking(booking_id=9732833)
+#booking = api.getbooking(booking_id=9732833)
 
 
 
-print(booking.guest.last_name)
+#print(booking.guest.last_name)
 
 
