@@ -2,9 +2,7 @@ import datetime
 import os 
 import dotenv
 
-from ownerrezapi import Ownerrezapi
-
-
+from . import Ownerrezapi
 
 
 dotenv.load_dotenv()
