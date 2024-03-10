@@ -1,5 +1,5 @@
 # Version: 2021.09.06
-import ownerrezapi.ownerrezapi as ownerrezapi
-from ownerrezapi.ownerrezapi import OwnerRezAPI
-
-OwnerRezAPI = ownerrezapi.OwnerRezAPI
+from ownerrezapi import OwnerRezAPI
+from ownerrezapi import model.Booking
+from ownerrezapi import model.Property
+from ownerrezapi import model.Charge
