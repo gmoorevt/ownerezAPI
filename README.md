@@ -14,7 +14,10 @@ This is a python wrapper for the Owerrez REST API.  Currently it only implements
 
 ## Installation
 
-Instructions on how to install and set up the project.
+To install the OwnerRez API package, you can use pip. Open your terminal or command prompt and run the following command:
+```
+$ python3 -m pip install ownerrezconnector 
+``` 
 
 ## Usage
 

@@ -49,6 +49,7 @@ class Ownerrezapi(object):
         booking_list = restAdapt.get(endpoint='bookings', ep_params=params)
         
 
+
         for booking in booking_list.data['items']:
             booking = Booking(**booking)
             results.append(booking)
