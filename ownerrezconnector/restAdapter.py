@@ -1,12 +1,13 @@
 import requests
 from json import JSONDecodeError
-from model import Result
+from ownerrezconnector.model import Result
+
 
 from typing import List, Dict
 import logging
 import datetime
-from constants import BASEURL as hosturl
-from expeptions import OwerrezapiExeception
+from ownerrezconnector.constants import BASEURL as hosturl
+from ownerrezconnector.expeptions import OwerrezapiExeception
 
 class RestAdapter(object):
     def __init__(self,username, token):

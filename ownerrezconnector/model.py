@@ -24,6 +24,34 @@ class Address:
     type: Optional[str] = None
 
 
+@dataclass
+class EmailAddress:
+    address: Optional[str] = None
+    id: Optional[int] = None
+    is_default: Optional[bool] = None
+    type: Optional[str] = None
+
+
+@dataclass
+class Phone:
+    extension: Optional[str] = None
+    id: Optional[int] = None
+    is_default: Optional[bool] = None
+    number: Optional[str] = None
+    type: Optional[str] = None
+
+
+@dataclass
+class Guest:
+    addresses: Optional[List[Address]] = None
+    email_addresses: Optional[List[EmailAddress]] = None
+    first_name: Optional[str] = None
+    id: Optional[int] = None
+    last_name: Optional[str] = None
+    notes: Optional[str] = None
+    phones: Optional[List[Phone]] = None
+
+
 
 @dataclass
 class Property:
@@ -84,12 +112,6 @@ class DoorCode:
     code: Optional[str] = None
     lock_names: Optional[str] = None
 
-
-@dataclass
-class Guest:
-    first_name: Optional[str] = None
-    id: Optional[int] = None
-    last_name: Optional[str] = None
 
 
 @dataclass

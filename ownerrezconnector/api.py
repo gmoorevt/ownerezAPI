@@ -1,11 +1,10 @@
 import requests
 from typing import List, Dict
 import logging
-from constants import BASEURL as url
-from model import *
-from constants import *
-from restAdapter import RestAdapter
-from expeptions import OwerrezapiExeception
+from ownerrezconnector.constants import BASEURL as hosturl
+from ownerrezconnector.model import *
+from ownerrezconnector.restAdapter import RestAdapter
+#from ownerrezapi.expeptions import OwerrezapiExeception
 import datetime
 
 
@@ -62,6 +61,14 @@ class Ownerrezapi(object):
         restAdapt = RestAdapter(self.username,self.token)
         booking = restAdapt.get(endpoint=f'bookings/{booking_id}')
         return Booking(**booking.data)
+    
+    def getguest(self, guest_id: int) -> Guest:
+        """
+        Get a single guest by ID.
+        """
+        restAdapt = RestAdapter(self.username,self.token)
+        guest = restAdapt.get(endpoint=f'guests/{guest_id}')
+        return Guest(**guest.data)
     
     def isunitbooked(self, property_id: int) -> bool:
         """
