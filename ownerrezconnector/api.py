@@ -4,7 +4,6 @@ import logging
 from ownerrezconnector.constants import BASEURL as hosturl
 from ownerrezconnector.model import *
 from ownerrezconnector.restAdapter import RestAdapter
-#from ownerrezapi.expeptions import OwerrezapiExeception
 import datetime
 
 
