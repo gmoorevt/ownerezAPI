@@ -25,7 +25,6 @@ class Ownerrezapi(object):
         self.username = username
         self.token = token
     
-    
     def getproperties(self) -> list:
         """
         Get a list of properties.
@@ -46,8 +45,6 @@ class Ownerrezapi(object):
         results = []
         params = {'since_utc': since_utc, 'property_id': property_id}
         booking_list = restAdapt.get(endpoint='bookings', ep_params=params)
-        
-
 
         for booking in booking_list.data['items']:
             booking = Booking(**booking)

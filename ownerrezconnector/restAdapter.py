@@ -7,7 +7,7 @@ from typing import List, Dict
 import logging
 import datetime
 from ownerrezconnector.constants import BASEURL as hosturl
-from ownerrezconnector.expeptions import OwerrezapiExeception
+from ownerrezconnector.exeptions import OwerrezapiExeception
 
 class RestAdapter(object):
     def __init__(self,username, token):
