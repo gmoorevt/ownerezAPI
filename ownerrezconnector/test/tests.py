@@ -2,6 +2,8 @@ import datetime
 import os 
 import dotenv
 from pprint import pprint
+from datetime import datetime, timedelta
+import datetime 
 
 from ownerrezconnector import api
 
@@ -17,10 +19,34 @@ def test_guest():
     print(guestname)
 
 
-# def main():
-    # print("Hello World")
-    # orapi = api.Ownerrezapi(username, token)
-    # propid = 7599858
+def main():
+    print("Hello World")
+    orapi = api.Ownerrezapi(username, token)
+    propid = 7599858
+    
+    searchtime = datetime.datetime.strftime(datetime.datetime.today() - timedelta(days=365), "%Y-%m-%d")
+
+    bookings = orapi.getbookings(propid, since_utc = searchtime)
+    
+    print("________________________________________")
+    pprint(bookings)
+    
+    print("________________________________________")
+    properties = orapi.getproperties()
+    pprint(properties)
+    
+    print("________________________________________")
+    guest = orapi.getguest(612693599)
+    pprint(guest)
+    
+    print("________________________________________")
+    isbooked = orapi.isunitbooked(propid)
+    if isbooked:
+        print("booked")
+    else:
+        print("not booked")
+
+
 
     # booking = orapi.getbooking(propid)
     
@@ -82,6 +108,12 @@ def test_getguest():
     booking = orapi.getbooking(booking_id=bookings[0].id)
     guest = orapi.getguest(booking.guest.id)
     assert guest is not None
+
+def test_isunitbooked():
+    orapi = api.Ownerrezapi(username, token,property_id=7599858)
+    properties = orapi.getproperties()
+    isbooked = orapi.isunitbooked(property_id=properties[0].id)
+    assert isbooked is not None
 
 # print (username)
 

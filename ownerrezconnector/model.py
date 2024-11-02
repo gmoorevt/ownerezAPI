@@ -156,4 +156,5 @@ class Booking:
     type: Optional[str] = None
     updated_utc: Optional[datetime] = None
     cancellation_policy_description: Optional[str] = None
+    cancellation_policy_id: Optional[int] = None
     created_utc: Optional[datetime] = None

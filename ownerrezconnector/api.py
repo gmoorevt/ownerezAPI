@@ -5,6 +5,7 @@ from ownerrezconnector.constants import BASEURL as hosturl
 from ownerrezconnector.model import *
 from ownerrezconnector.restAdapter import RestAdapter
 import datetime
+from datetime import timedelta
 
 
 log = logging.getLogger(__name__)
@@ -72,7 +73,8 @@ class Ownerrezapi(object):
         Check if a unit is booked today.
         """
         today = datetime.datetime.today()
-        bookings = self.getbookings(property_id=property_id, since_utc=today)
+        searchdate = datetime.datetime.strftime(today - timedelta(days=365),"%Y-%m-%d")
+        bookings = self.getbookings(property_id=property_id, since_utc=searchdate)
         for booking in bookings:
             arrival = datetime.datetime.strptime(booking.arrival, "%Y-%m-%d")
             departure = datetime.datetime.strptime(booking.departure, "%Y-%m-%d")
