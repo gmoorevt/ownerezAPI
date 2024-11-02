@@ -17,15 +17,15 @@ def test_guest():
     print(guestname)
 
 
-def main():
-    print("Hello World")
-    orapi = api.Ownerrezapi(username, token)
-    7599858
+# def main():
+    # print("Hello World")
+    # orapi = api.Ownerrezapi(username, token)
+    # propid = 7599858
 
-    booking = orapi.getbooking(7599858)
+    # booking = orapi.getbooking(propid)
     
-    pprint(booking)
-    print(booking.guest.first_name + " " + booking.guest.last_name)
+    # pprint(booking)
+    # print(booking.guest.first_name + " " + booking.guest.last_name)
     
     # events = []
     # for booking in bookings:
